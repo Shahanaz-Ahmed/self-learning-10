@@ -1,48 +1,41 @@
 import React from "react";
-import { Image } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import { FaEye, FaRegBookmark, FaShareAlt, FaStar } from "react-icons/fa";
+import { FaDownload, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Pdf from "react-to-pdf";
 
 const CourseSummaryCard = ({ courses }) => {
+  const ref = React.createRef();
   const {
     title,
     _id,
-    total_view,
     instructor,
     details,
     image_url,
     price,
     rating,
+    category_id,
   } = courses;
   return (
     <Card className="mb-5 p-0">
       <Card.Header className="d-flex justify-content-between align-items-center">
-        <div className="d-flex">
-          <Image
-            className="me-2"
-            roundedCircle
-            src={instructor?.img}
-            style={{ height: "60px" }}
-          ></Image>
-          <div>
-            <p className="mb-0">{instructor?.name}</p>
-            <p>{instructor?.published_date}</p>
-          </div>
-        </div>
-        <div>
-          <FaRegBookmark className="me-2"></FaRegBookmark>
-          <FaShareAlt></FaShareAlt>
-        </div>
+        <Button>Get Premium Access</Button>
+        <Pdf targetRef={ref} filename={`course${category_id}.pdf`}>
+          {({ toPdf }) => (
+            <Button className="bg-light text-dark" onClick={toPdf}>
+              <FaDownload></FaDownload>
+            </Button>
+          )}
+        </Pdf>
       </Card.Header>
-      <Card.Body>
+      <Card.Body ref={ref}>
         <Card.Title>{title}</Card.Title>
         <Image
           className=""
           src={image_url}
           style={{ height: "250px", width: "100%" }}
         ></Image>
-        {/* <Card.Img variant="top" src={image_url} /> */}
         <Card.Text>
           {details.length > 250 ? (
             <p>
@@ -60,8 +53,7 @@ const CourseSummaryCard = ({ courses }) => {
           <span>{rating?.number}</span>
         </div>
         <div>
-          <FaEye className="me-2"></FaEye>
-          <span>{total_view}</span>
+          <h5>{price}</h5>
         </div>
       </Card.Footer>
     </Card>

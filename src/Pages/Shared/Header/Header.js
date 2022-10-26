@@ -14,6 +14,12 @@ const Header = () => {
       variant="light"
     >
       <Container>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/201/201614.png"
+          alt=""
+          style={{ height: "45px" }}
+          className="me-2"
+        />
         <Navbar.Brand>
           <Link to="/">EduTech</Link>
         </Navbar.Brand>
