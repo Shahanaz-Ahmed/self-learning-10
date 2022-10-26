@@ -24,7 +24,9 @@ const Header = () => {
               <Link to="/">Courses</Link>
             </Nav.Link>
             <Nav.Link href="#pricing">FAQ</Nav.Link>
-            <Nav.Link href="#pricing">Blog</Nav.Link>
+            <Nav.Link>
+              <Link to="/blog">Blog</Link>
+            </Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">More deets</Nav.Link>
