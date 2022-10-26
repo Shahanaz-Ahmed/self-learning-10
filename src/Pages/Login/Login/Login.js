@@ -1,13 +1,18 @@
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate("");
   const { providerLogin, signIn } = useContext(AuthContext);
+
+  const from = location.state?.from?.pathname || "/";
   const googleProvider = new GoogleAuthProvider();
   const gitHubProvider = new GithubAuthProvider();
   const handleSubmit = (event) => {
@@ -21,9 +26,13 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
-        navigate("/");
+        setError("");
+        navigate(from, { replace: true });
       })
-      .catch((e) => console.error(e));
+      .catch((e) => {
+        console.error(e);
+        setError(e.message);
+      });
   };
 
   const handleGoogleSignIn = () => {
@@ -31,7 +40,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
   };
@@ -41,7 +50,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
   };
@@ -56,9 +65,7 @@ const Login = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control name="password" type="password" placeholder="Password" />
       </Form.Group>
-      <Form.Text className="text-danger">
-        We'll never share your email with anyone else.
-      </Form.Text>
+      <Form.Text className="text-danger">{error}</Form.Text>
       <br />
       <Button variant="outline-primary" type="submit">
         Login

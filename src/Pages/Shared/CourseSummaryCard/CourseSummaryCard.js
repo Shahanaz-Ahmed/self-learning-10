@@ -20,7 +20,9 @@ const CourseSummaryCard = ({ courses }) => {
   return (
     <Card className="mb-5 p-0">
       <Card.Header className="d-flex justify-content-between align-items-center">
-        <Button>Get Premium Access</Button>
+        <Button className="bg-light text-dark">
+          <Link to={`/checkout/${_id}`}>Get Premium Access</Link>
+        </Button>
         <Pdf targetRef={ref} filename={`course${category_id}.pdf`}>
           {({ toPdf }) => (
             <Button className="bg-light text-dark" onClick={toPdf}>

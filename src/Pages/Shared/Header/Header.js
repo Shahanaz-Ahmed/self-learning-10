@@ -50,7 +50,7 @@ const Header = () => {
               </Nav.Link>
             </Nav>
             <div>
-              <div className="container d-flex justify-content-center align-items-center">
+              <div className="container d-flex align-items-center">
                 <span style={{ color: darkMode ? "grey" : "brown" }}>
                   light
                 </span>
