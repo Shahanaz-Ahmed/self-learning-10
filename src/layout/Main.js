@@ -8,16 +8,7 @@ const Main = () => {
   return (
     <div>
       <Header></Header>
-      <Container>
-        <Row>
-          <Col lg="3">
-            <LeftSideNav></LeftSideNav>
-          </Col>
-          <Col lg="9">
-            <Outlet></Outlet>
-          </Col>
-        </Row>
-      </Container>
+      <Outlet></Outlet>
     </div>
   );
 };

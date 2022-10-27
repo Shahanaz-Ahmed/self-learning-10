@@ -3,7 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 
 const Blog = () => {
   return (
-    <Accordion defaultActiveKey={["0"]} alwaysOpen>
+    <Accordion className="w-50 mx-auto" defaultActiveKey={["0"]} alwaysOpen>
       <Accordion.Item eventKey="0">
         <Accordion.Header>What is cors?</Accordion.Header>
         <Accordion.Body>

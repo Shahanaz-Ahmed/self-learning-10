@@ -32,7 +32,7 @@ const Register = () => {
       });
   };
   return (
-    <div>
+    <div className="w-50 mx-auto">
       <Form
         onSubmit={handleSubmit}
         className=" shadow-lg bg-body p-5 rounded w-100"

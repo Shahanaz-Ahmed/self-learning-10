@@ -29,11 +29,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses/:id",
-        element: (
-          <PrivateRoute>
-            <Courses></Courses>
-          </PrivateRoute>
-        ),
+        element: <Courses></Courses>,
         loader: ({ params }) =>
           fetch(`https://edutech-server-ebon.vercel.app/courses/${params.id}`),
       },

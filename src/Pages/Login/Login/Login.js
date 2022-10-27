@@ -57,7 +57,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="w-50 mx-auto">
       <Form
         onSubmit={handleSubmit}
         className="shadow p-5 mb-4 bg-body rounded w-100"
