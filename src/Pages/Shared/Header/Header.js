@@ -23,9 +23,9 @@ const Header = () => {
     <div>
       <Navbar
         collapseOnSelect
-        className="mb-5"
+        className="mb-5 pt-3 shadow"
         expand="lg"
-        bg="light"
+        bg="white"
         variant="light"
       >
         <Container>
@@ -36,22 +36,39 @@ const Header = () => {
             className="me-2"
           />
           <Navbar.Brand>
-            <Link to="/">EduTech</Link>
+            <Link className="text-decoration-none fs-5 fw-bold" to="/">
+              EduTech
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link>
-                <Link to="/allCourse">Courses</Link>
+                <Link
+                  className="text-decoration-none fs-5 fw-bold"
+                  to="/allCourse"
+                >
+                  Courses
+                </Link>
               </Nav.Link>
-              <Nav.Link href="#pricing">FAQ</Nav.Link>
+              <Nav.Link
+                className="text-decoration-none fs-5 fw-bold"
+                href="#pricing"
+              >
+                FAQ
+              </Nav.Link>
               <Nav.Link>
-                <Link to="/blog">Blog</Link>
+                <Link className="text-decoration-none fs-5 fw-bold" to="/blog">
+                  Blog
+                </Link>
               </Nav.Link>
             </Nav>
             <div>
               <div className="container d-flex align-items-center">
-                <span style={{ color: darkMode ? "grey" : "brown" }}>
+                <span
+                  className="fw-semibold"
+                  style={{ color: darkMode ? "grey" : "crimson" }}
+                >
                   light
                 </span>
 
@@ -64,7 +81,10 @@ const Header = () => {
                     <span className="slider round"> </span>
                   </label>
                 </div>
-                <span style={{ color: darkMode ? "#c96dfd" : "grey" }}>
+                <span
+                  className="fw-semibold"
+                  style={{ color: darkMode ? "#c96dfd" : "grey" }}
+                >
                   dark
                 </span>
               </div>
@@ -90,10 +110,18 @@ const Header = () => {
                   </>
                 ) : (
                   <>
-                    <Link className="me-3" to="/login">
+                    <Link
+                      className="me-3 text-decoration-none fs-5 fw-bold"
+                      to="/login"
+                    >
                       Login
                     </Link>
-                    <Link to="/register">Register</Link>
+                    <Link
+                      className="text-decoration-none fs-5 fw-bold"
+                      to="/register"
+                    >
+                      Register
+                    </Link>
                   </>
                 )}
               </Nav.Link>

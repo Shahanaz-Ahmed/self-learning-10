@@ -6,8 +6,12 @@ const Home = () => {
   const categoryCourses = useLoaderData();
   return (
     <div>
-      <h2>This is Home : {categoryCourses.length}</h2>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
+      <h3>Total Courses Available : {categoryCourses.length}</h3>
+      <p className="fs-5">
+        Grow your career with quality education.Start learning from the worlds
+        best site.
+      </p>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-5">
         {categoryCourses.map((courses) => (
           <CourseSummaryCard
             key={courses._id}

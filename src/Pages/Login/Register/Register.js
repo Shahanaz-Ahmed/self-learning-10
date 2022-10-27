@@ -32,50 +32,58 @@ const Register = () => {
       });
   };
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Your Name</Form.Label>
-        <Form.Control name="name" type="text" placeholder="Enter Your Name" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Photo URL</Form.Label>
-        <Form.Control
-          name="photoURL"
-          type="text"
-          placeholder="Enter Photo URL"
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          name="email"
-          type="email"
-          placeholder="Enter email"
-          required
-        />
-      </Form.Group>
+    <div>
+      <Form
+        onSubmit={handleSubmit}
+        className=" shadow-lg bg-body p-5 rounded w-100"
+      >
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <h3 className="fw-bold">
+            <Form.Label>Register</Form.Label>
+          </h3>
+          <Form.Label>Your Name</Form.Label>
+          <Form.Control name="name" type="text" placeholder="Enter Your Name" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Photo URL</Form.Label>
+          <Form.Control
+            name="photoURL"
+            type="text"
+            placeholder="Enter Photo URL"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            name="email"
+            type="email"
+            placeholder="Enter email"
+            required
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          name="password"
-          type="password"
-          placeholder="Password"
-          required
-        />
-      </Form.Group>
-      <Form.Text className="text-danger">{error}</Form.Text>
-      <br />
-      <Button variant="primary" type="submit">
-        Register
-      </Button>
-      <p>
-        <small>
-          {" "}
-          Already have an account? Please <Link to="/Login">Login</Link>
-        </small>
-      </p>
-    </Form>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </Form.Group>
+        <Form.Text className="text-danger">{error}</Form.Text>
+        <br />
+        <Button variant="primary" type="submit">
+          Register
+        </Button>
+        <p>
+          <small>
+            {" "}
+            Already have an account? Please <Link to="/Login">Login</Link>
+          </small>
+        </p>
+      </Form>
+    </div>
   );
 };
 

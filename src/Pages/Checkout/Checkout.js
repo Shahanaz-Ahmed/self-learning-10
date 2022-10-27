@@ -9,6 +9,7 @@ const Checkout = () => {
   const {
     title,
     _id,
+    intro,
     total_enroll,
     instructor,
     details,
@@ -39,8 +40,13 @@ const Checkout = () => {
         <Card.Img variant="top" src={image_url} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
+
+          <Card.Text>{intro}</Card.Text>
           <Card.Text>{details}</Card.Text>
         </Card.Body>
+        <Button variant="outline-info" className="p-3">
+          Enroll Now
+        </Button>
       </Card>
     </div>
   );

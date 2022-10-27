@@ -6,7 +6,7 @@ const Category = () => {
   const categoryCourses = useLoaderData();
   return (
     <div>
-      <h2>This is Category : {categoryCourses.length}</h2>
+      <h3>This Category have: {categoryCourses.length} course available</h3>
       {categoryCourses.map((courses) => (
         <CourseSummaryCard
           key={courses._id}

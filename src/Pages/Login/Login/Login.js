@@ -56,35 +56,52 @@ const Login = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="w-50">
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control name="email" type="email" placeholder="Enter email" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control name="password" type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Text className="text-danger">{error}</Form.Text>
-      <br />
-      <Button variant="outline-primary" type="submit">
-        Login
-      </Button>{" "}
-      <br />
-      <Button onClick={handleGoogleSignIn} variant="outline-info">
-        Login with Google
-      </Button>{" "}
-      <br />
-      <Button onClick={handleGitHubSignIn} variant="outline-dark">
-        Login with GitHub
-      </Button>
-      <p>
-        <small>
-          {" "}
-          New to this website? Please <Link to="/register">Register</Link>
-        </small>
-      </p>
-    </Form>
+    <div>
+      <Form
+        onSubmit={handleSubmit}
+        className="shadow p-5 mb-4 bg-body rounded w-100"
+      >
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <h3 className="fw-bold">
+            {" "}
+            <Form.Label>Login</Form.Label>
+          </h3>
+          <Form.Label>Email address</Form.Label>
+          <Form.Control name="email" type="email" placeholder="Enter email" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            name="password"
+            type="password"
+            placeholder="Password"
+          />
+        </Form.Group>
+        <Form.Text className="text-danger">{error}</Form.Text>
+        <br />
+        <Button className="mb-3" variant="outline-primary" type="submit">
+          Login
+        </Button>{" "}
+        <br />
+        <Button
+          onClick={handleGoogleSignIn}
+          variant="outline-info"
+          className="mb-3"
+        >
+          Login with Google
+        </Button>{" "}
+        <br />
+        <Button onClick={handleGitHubSignIn} variant="outline-dark">
+          Login with GitHub
+        </Button>
+        <p>
+          <small>
+            {" "}
+            New to this website? Please <Link to="/register">Register</Link>
+          </small>
+        </p>
+      </Form>
+    </div>
   );
 };
 
