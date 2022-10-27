@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Image } from "react-bootstrap";
+import { FaDownload, FaStar } from "react-icons/fa";
 
 const Checkout = () => {
   const courses = useLoaderData();
@@ -15,6 +16,7 @@ const Checkout = () => {
     details,
     image_url,
     price,
+    rating,
     category_id,
   } = courses;
   return (
@@ -40,11 +42,18 @@ const Checkout = () => {
         <Card.Img variant="top" src={image_url} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
-
           <Card.Text>{intro}</Card.Text>
-          <Card.Text>{details}</Card.Text>
         </Card.Body>
-        <Button variant="outline-info" className="p-3">
+        <Card.Footer className="d-flex justify-content-between">
+          <div>
+            <FaStar className="text-warning me-2"></FaStar>
+            <span>{rating?.number}</span>
+          </div>
+          <div>
+            <h5>{price}</h5>
+          </div>
+        </Card.Footer>
+        <Button variant="outline-info" className="p-3 fw-bold">
           Enroll Now
         </Button>
       </Card>

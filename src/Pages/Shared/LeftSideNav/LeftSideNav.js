@@ -12,7 +12,7 @@ const LeftSideNav = () => {
       .then((data) => setCategories(data));
   });
   return (
-    <div>
+    <div className="sticky-top">
       <h4>Course Category : {categories.length}</h4>
       {categories.map((category) => (
         <p key={category.id}>

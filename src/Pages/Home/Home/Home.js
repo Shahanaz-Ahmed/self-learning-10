@@ -6,7 +6,7 @@ const Home = () => {
   const categoryCourses = useLoaderData();
   return (
     <div>
-      <h3>Total Courses Available : {categoryCourses.length}</h3>
+      <h3>Learning never exhausts the mind.</h3>
       <p className="fs-5">
         Grow your career with quality education.Start learning from the worlds
         best site.

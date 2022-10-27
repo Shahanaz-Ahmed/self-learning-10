@@ -55,7 +55,9 @@ const Header = () => {
                 className="text-decoration-none fs-5 fw-bold"
                 href="#pricing"
               >
-                FAQ
+                <Link className="text-decoration-none fs-5 fw-bold" to="/faq">
+                  FAQ
+                </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link className="text-decoration-none fs-5 fw-bold" to="/blog">
@@ -67,7 +69,7 @@ const Header = () => {
               <div className="container d-flex align-items-center">
                 <span
                   className="fw-semibold"
-                  style={{ color: darkMode ? "grey" : "crimson" }}
+                  style={{ color: darkMode ? "grey" : "pink" }}
                 >
                   light
                 </span>
