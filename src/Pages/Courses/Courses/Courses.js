@@ -23,13 +23,13 @@ const Courses = () => {
   } = courses;
 
   return (
-    <Card ref={ref} className="w-50 mx-auto">
+    <Card ref={ref} className="w-75 mx-auto">
       <Card.Header className="d-flex justify-content-between align-items-center">
-        <Button className="bg-light text-dark">
-          <Link className="text-decoration-none" to={`/checkout/${_id}`}>
+        <Link className="text-decoration-none" to={`/checkout/${_id}`}>
+          <Button variant="outline-info" className="fw-semibold">
             Get Premium Access
-          </Link>
-        </Button>
+          </Button>
+        </Link>
         <Pdf targetRef={ref} filename={`course${category_id}.pdf`}>
           {({ toPdf }) => (
             <Button className="bg-light text-dark" onClick={toPdf}>
@@ -38,7 +38,7 @@ const Courses = () => {
           )}
         </Pdf>
       </Card.Header>
-      <Card.Header className="d-flex justify-content-between align-items-center ">
+      <div className="d-flex justify-content-between align-items-center m-3">
         <div className="d-flex">
           <Image
             className="me-2"
@@ -54,7 +54,7 @@ const Courses = () => {
         <div>
           <h6>Enrolled : {total_enroll}</h6>
         </div>
-      </Card.Header>
+      </div>
       <Card.Img variant="top" src={image_url} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>

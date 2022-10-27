@@ -32,7 +32,7 @@ const Register = () => {
       });
   };
   return (
-    <div className="w-50 mx-auto">
+    <div className="w-75  mx-auto">
       <Form
         onSubmit={handleSubmit}
         className=" shadow-lg bg-body p-5 rounded w-100"
@@ -73,7 +73,7 @@ const Register = () => {
         </Form.Group>
         <Form.Text className="text-danger">{error}</Form.Text>
         <br />
-        <Button variant="primary" type="submit">
+        <Button variant="outline-primary fw-semibold" type="submit">
           Register
         </Button>
         <p>

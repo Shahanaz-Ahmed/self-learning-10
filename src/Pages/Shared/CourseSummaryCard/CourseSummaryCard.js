@@ -21,20 +21,6 @@ const CourseSummaryCard = ({ courses }) => {
   return (
     <div>
       <Card className="mb-5 p-0 shadow border border-0 h-100">
-        {/* <Card.Header className="d-flex justify-content-between align-items-center">
-          <Button className="bg-light text-dark">
-            <Link className="text-decoration-none" to={`/checkout/${_id}`}>
-              Get Premium Access
-            </Link>
-          </Button>
-          <Pdf targetRef={ref} filename={`course${category_id}.pdf`}>
-            {({ toPdf }) => (
-              <Button className="bg-light text-dark" onClick={toPdf}>
-                <FaDownload></FaDownload>
-              </Button>
-            )}
-          </Pdf>
-        </Card.Header> */}
         <Card.Body className="mt-3 pb-0">
           <Card.Title>{title}</Card.Title>
           <Image
@@ -45,10 +31,7 @@ const CourseSummaryCard = ({ courses }) => {
           <Card.Text className="mt-3">{intro}</Card.Text>
           <Card.Text>
             {details.length > 100 ? (
-              <p>
-                {details.slice(0, 100) + "..."}
-                {/* <Link to={`/courses/${_id}`}>Read more</Link> */}
-              </p>
+              <p>{details.slice(0, 100) + "..."}</p>
             ) : (
               <p>{details}</p>
             )}
@@ -63,23 +46,16 @@ const CourseSummaryCard = ({ courses }) => {
             <h5>{price}</h5>
           </div>
         </div>
-        {/* <Card.Footer className="d-flex justify-content-between">
-          <div>
-            <FaStar className="text-warning me-2"></FaStar>
-            <span>{rating?.number}</span>
-          </div>
-          <div>
-            <h5>{price}</h5>
-          </div>
-        </Card.Footer> */}
-        <Button className="mt-0 p-3 m-3">
-          <Link
-            className="text-white text-decoration-none"
-            to={`/courses/${_id}`}
-          >
+
+        <Link
+          className="text-decoration-none text-dark fw-bold"
+          to={`/courses/${_id}`}
+        >
+          <Button variant="outline-info" className="p-3 w-100 fw-semibold">
+            {" "}
             Get Course
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </Card>
     </div>
   );

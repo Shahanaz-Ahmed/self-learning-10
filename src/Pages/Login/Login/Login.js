@@ -57,7 +57,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-50 mx-auto">
+    <div className="w-75  mx-auto">
       <Form
         onSubmit={handleSubmit}
         className="shadow p-5 mb-4 bg-body rounded w-100"
@@ -80,19 +80,27 @@ const Login = () => {
         </Form.Group>
         <Form.Text className="text-danger">{error}</Form.Text>
         <br />
-        <Button className="mb-3" variant="outline-primary" type="submit">
+        <Button
+          className="mb-3 fw-semibold"
+          variant="outline-primary"
+          type="submit"
+        >
           Login
         </Button>{" "}
         <br />
         <Button
           onClick={handleGoogleSignIn}
           variant="outline-info"
-          className="mb-3"
+          className="mb-3 fw-semibold"
         >
           <FaGoogle></FaGoogle> Login with Google
         </Button>{" "}
         <br />
-        <Button onClick={handleGitHubSignIn} variant="outline-dark">
+        <Button
+          className="fw-semibold"
+          onClick={handleGitHubSignIn}
+          variant="outline-dark"
+        >
           <FaGithub></FaGithub> Login with GitHub
         </Button>
         <p>

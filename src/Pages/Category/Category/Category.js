@@ -5,7 +5,7 @@ import CourseSummaryCard from "../../Shared/CourseSummaryCard/CourseSummaryCard"
 const Category = () => {
   const categoryCourses = useLoaderData();
   return (
-    <div className="w-50 mx-auto">
+    <div className="w-75 mx-auto">
       <h3>This Category have: {categoryCourses.length} course available</h3>
       {categoryCourses.map((courses) => (
         <CourseSummaryCard
