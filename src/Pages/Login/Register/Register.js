@@ -9,7 +9,7 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, setLoading } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -31,8 +31,9 @@ const Register = () => {
       })
       .catch((e) => {
         console.error(e);
-        setError(e.message);
+        setError(e.code);
       });
+    setLoading(false);
   };
 
   const handleUpdateUserProfile = (name, photoURL) => {
@@ -42,7 +43,11 @@ const Register = () => {
     };
     updateUserProfile(profile)
       .then(() => {})
-      .catch((e) => console.error(error));
+      .catch((e) => {
+        console.error(e);
+        setError(e.code);
+      });
+    setLoading(false);
   };
   return (
     <div className="w-75  mx-auto">
@@ -68,7 +73,6 @@ const Register = () => {
             name="photoURL"
             type="text"
             placeholder="Enter Photo URL"
-            required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">

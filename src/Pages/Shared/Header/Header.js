@@ -92,7 +92,11 @@ const Header = () => {
               </div>
             </div>
             <Nav>
-              <Nav.Link href="" data-toggle="tooltip" title={user?.displayName}>
+              <Nav.Link
+                href=""
+                data-toggle="tooltip"
+                title={user?.displayName || "No Name"}
+              >
                 {user?.uid ? (
                   <>
                     {/* {
@@ -101,7 +105,10 @@ const Header = () => {
                       className="me-3"
                       roundedCircle
                       style={{ height: "30px" }}
-                      src={user.photoURL}
+                      src={
+                        user.photoURL ||
+                        "https://t3.ftcdn.net/jpg/03/46/83/96/240_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
+                      }
                     ></Image>
                     <Button onClick={handleLogOut}>Log Out</Button>
                   </>

@@ -11,7 +11,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const location = useLocation();
   const navigate = useNavigate("");
-  const { providerLogin, signIn } = useContext(AuthContext);
+  const { providerLogin, signIn, setLoading } = useContext(AuthContext);
 
   const from = location.state?.from?.pathname || "/";
 
@@ -33,8 +33,9 @@ const Login = () => {
       })
       .catch((e) => {
         console.error(e);
-        setError(e.message);
+        setError(e.code);
       });
+    setLoading(false);
   };
 
   const handleGoogleSignIn = () => {
@@ -44,7 +45,11 @@ const Login = () => {
         console.log(user);
         navigate(from, { replace: true });
       })
-      .catch((error) => console.error(error));
+      .catch((e) => {
+        console.error(e);
+        setError(e.code);
+      });
+    setLoading(false);
   };
 
   const handleGitHubSignIn = () => {
@@ -54,7 +59,11 @@ const Login = () => {
         console.log(user);
         navigate(from, { replace: true });
       })
-      .catch((error) => console.error(error));
+      .catch((e) => {
+        console.error(e);
+        setError(e.code);
+      });
+    setLoading(false);
   };
 
   return (
