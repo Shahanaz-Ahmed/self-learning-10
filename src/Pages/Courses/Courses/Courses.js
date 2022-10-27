@@ -61,7 +61,7 @@ const Courses = () => {
         <Card.Text>{details}</Card.Text>
         <Link to={`/category/${category_id}`}>
           <Button variant="primary" className="mb-3">
-            All News in this Category
+            All Courses in this Category
           </Button>
         </Link>
         <Card.Footer className="d-flex justify-content-between">

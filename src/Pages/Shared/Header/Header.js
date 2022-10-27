@@ -37,7 +37,7 @@ const Header = () => {
           />
           <Navbar.Brand>
             <Link className="text-decoration-none fs-5 fw-bold" to="/">
-              EduTech
+              Self Learning
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -71,7 +71,7 @@ const Header = () => {
                   className="fw-semibold"
                   style={{ color: darkMode ? "grey" : "pink" }}
                 >
-                  light
+                  Light
                 </span>
 
                 <div className="switch-checkbox">
@@ -87,7 +87,7 @@ const Header = () => {
                   className="fw-semibold"
                   style={{ color: darkMode ? "#c96dfd" : "grey" }}
                 >
-                  dark
+                  Dark
                 </span>
               </div>
             </div>
@@ -95,19 +95,14 @@ const Header = () => {
               <Nav.Link href="" data-toggle="tooltip" title={user?.displayName}>
                 {user?.uid ? (
                   <>
-                    {user?.photoURL ? (
-                      <Image
-                        className="me-3"
-                        roundedCircle
-                        style={{ height: "30px" }}
-                        src={user.photoURL}
-                      ></Image>
-                    ) : (
-                      <FaUser
-                        title={user?.displayName}
-                        className="me-3"
-                      ></FaUser>
-                    )}
+                    {/* {
+                      user?.photoURL ? ( */}
+                    <Image
+                      className="me-3"
+                      roundedCircle
+                      style={{ height: "30px" }}
+                      src={user.photoURL}
+                    ></Image>
                     <Button onClick={handleLogOut}>Log Out</Button>
                   </>
                 ) : (

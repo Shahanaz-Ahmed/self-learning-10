@@ -9,7 +9,7 @@ const AllCourse = () => {
   const categoryCourses = useLoaderData();
   return (
     <div>
-      <Container>
+      <Container className="mb-4">
         <Row>
           <Col lg="3">
             <LeftSideNav></LeftSideNav>

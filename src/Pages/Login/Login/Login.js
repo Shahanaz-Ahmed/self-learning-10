@@ -14,6 +14,7 @@ const Login = () => {
   const { providerLogin, signIn } = useContext(AuthContext);
 
   const from = location.state?.from?.pathname || "/";
+
   const googleProvider = new GoogleAuthProvider();
   const gitHubProvider = new GithubAuthProvider();
   const handleSubmit = (event) => {
@@ -68,7 +69,12 @@ const Login = () => {
             <Form.Label>Login</Form.Label>
           </h3>
           <Form.Label>Email address</Form.Label>
-          <Form.Control name="email" type="email" placeholder="Enter email" />
+          <Form.Control
+            name="email"
+            type="email"
+            placeholder="Enter email"
+            required
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
@@ -76,6 +82,7 @@ const Login = () => {
             name="password"
             type="password"
             placeholder="Password"
+            required
           />
         </Form.Group>
         <Form.Text className="text-danger">{error}</Form.Text>

@@ -3,12 +3,13 @@ import { useState } from "react";
 import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState("");
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,14 +23,26 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
         setError("");
         form.reset();
+        handleUpdateUserProfile(name, photoURL);
+        navigate("/login");
       })
       .catch((e) => {
         console.error(e);
         setError(e.message);
       });
+  };
+
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateUserProfile(profile)
+      .then(() => {})
+      .catch((e) => console.error(error));
   };
   return (
     <div className="w-75  mx-auto">
@@ -42,7 +55,12 @@ const Register = () => {
             <Form.Label>Register</Form.Label>
           </h3>
           <Form.Label>Your Name</Form.Label>
-          <Form.Control name="name" type="text" placeholder="Enter Your Name" />
+          <Form.Control
+            name="name"
+            type="text"
+            placeholder="Enter Your Name"
+            required
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Photo URL</Form.Label>
@@ -50,6 +68,7 @@ const Register = () => {
             name="photoURL"
             type="text"
             placeholder="Enter Photo URL"
+            required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
