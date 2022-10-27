@@ -90,7 +90,7 @@ const Header = () => {
               </div>
             </div>
             <Nav>
-              <Nav.Link href="" title={user?.displayName}>
+              <Nav.Link href="" data-toggle="tooltip" title={user?.displayName}>
                 {user?.uid ? (
                   <>
                     {user?.photoURL ? (
