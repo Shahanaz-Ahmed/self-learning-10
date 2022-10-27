@@ -19,13 +19,13 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () => fetch("https://edutech-server-ebon.vercel.app/courses"),
       },
       {
         path: "/category/:id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://edutech-server-ebon.vercel.app/category/${params.id}`),
       },
       {
         path: "/courses/:id",
@@ -35,7 +35,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courses/${params.id}`),
+          fetch(`https://edutech-server-ebon.vercel.app/courses/${params.id}`),
       },
       {
         path: "/faq",
@@ -48,7 +48,7 @@ export const routes = createBrowserRouter([
       {
         path: "/allCourse",
         element: <AllCourse></AllCourse>,
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () => fetch("https://edutech-server-ebon.vercel.app/courses"),
       },
       {
         path: "/login",
@@ -66,7 +66,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courses/${params.id}`),
+          fetch(`https://edutech-server-ebon.vercel.app/courses/${params.id}`),
       },
       {
         path: "/*",

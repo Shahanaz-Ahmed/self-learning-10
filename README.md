@@ -1,5 +1,5 @@
 website name : EduTech
-website link :
+website link : https://edutech-849e4.web.app/
 
 ### features and functionality
 
