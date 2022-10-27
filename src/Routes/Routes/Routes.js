@@ -73,7 +73,8 @@ export const routes = createBrowserRouter([
         element: (
           <div>
             {" "}
-            <h1>Route didn't found. 404</h1>
+            <h1 className="text-center">404</h1>
+            <h5 className="text-center">This route does not exist</h5>
           </div>
         ),
       },
